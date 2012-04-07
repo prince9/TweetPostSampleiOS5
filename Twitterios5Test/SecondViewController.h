@@ -10,4 +10,6 @@
 
 @interface SecondViewController : UIViewController
 
+//「設定」を呼び出す、Settings is called. 
+- (IBAction)acountSet:(id)sender;
 @end

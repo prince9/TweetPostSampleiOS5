@@ -57,4 +57,19 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+//「設定」を呼び出すダイアログ、The dialog which calls "Settings".
+- (IBAction)acountSet:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"お知らせ" message:@"「設定」を開く" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:@"open setting", nil];
+    [alert show];
+}
+
+//「設定」を呼び出す、Settings is called. 
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == 1){
+        NSURL *twSettingURL = [NSURL URLWithString:@"prefs:root=TWITTER"];
+        [[UIApplication sharedApplication] openURL:twSettingURL];
+    }
+}
+
 @end
